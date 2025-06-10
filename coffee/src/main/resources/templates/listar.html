@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>LISTAGEM DE PRODUTOS</title>
+</head>
+<body>
+    <h1>LISTAGEM DE PRODUTOS</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>NOME</th>
+                <th>PRODUTO</th>
+                <th>QUANTIDADE</th>
+                <th>OBS</th>
+            </tr>
+<tbody th:each="ped : ${pedido}">
+    <tr>
+        <td th:text = "${ped.id}"></td>
+        <td th:text = "${ped.nome}"></td>
+        <td th:text = "${ped.produto}"></td>
+         <td th:text = "${ped.quantidade}"></td>
+        <td th:text = "${ped.obs}"></td>
+
+
+        </td>
+    </tr>
+</tbody>
+        </thead>
+    </table>
+    
+</body>
+</html>

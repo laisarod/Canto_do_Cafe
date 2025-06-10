@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>FORMULARIO</title>
+</head>
+<body>
+    <h1 th:text="${titulo}"></h1>
+    <form th:action="@{${link}}" method="POST" th:object="${pedido}">
+        Nome: <input type="text" th:field="*{nome}" ><br>
+        PRODUTO: <input type="text" th:field="*{produto}" ><br>
+        QUANTIDADE: <input type="text" th:field="*{quantidade}" ><br>
+        OBS: <input type="text" th:field="*{obs}" ><br>
+        <input type="submit" th:value="${valor}">
+    </form>
+</body>
+</html>
