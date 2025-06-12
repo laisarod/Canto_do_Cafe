@@ -13,6 +13,15 @@ public class PedidoService {
     public void inserirProduto(Pedido ped){
         pdao.inserirProduto(ped);
     }
+    // Atualizar pedido
+    //public void atualizarPedido(Pedido ped) {
+    //pdao.atualizarPedido(ped);
+}
+
+//Remover pedido
+ //public void removerPedido(int id) {
+// pdao.removerPedido(id);
+}
 
     public List<Pedido> puxarTodosPedidos(){
     return Pedido.converterVarios(pdao.puxarTodosPedidos());
