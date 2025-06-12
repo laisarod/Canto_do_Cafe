@@ -22,9 +22,13 @@ public class PedidoService {
  //public void removerPedido(int id) {
 // pdao.removerPedido(id);
 }
+// Buscar um pedido por ID
+//public Pedido buscarPedidoPorId(int id) {
+   // return Pedido.converter(pdao.puxarPedido(id));
+}
 
-    public List<Pedido> puxarTodosPedidos(){
-    return Pedido.converterVarios(pdao.puxarTodosPedidos());
+   // public List<Pedido> puxarTodosPedidos(){
+    //return Pedido.converterVarios(pdao.puxarTodosPedidos());
 }
 
 }
