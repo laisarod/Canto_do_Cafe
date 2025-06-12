@@ -21,8 +21,9 @@
         <td th:text = "${ped.produto}"></td>
          <td th:text = "${ped.quantidade}"></td>
         <td th:text = "${ped.obs}"></td>
-
-
+        <td>
+            <a th:href="@{'/editar?id=' + ${ped.id}}">Editar</a> |
+            <a th:href="@{'/remover?id=' + ${ped.id}}" onclick="return confirm('Tem certeza que deseja remover?')">Remover</a>
         </td>
     </tr>
 </tbody>
