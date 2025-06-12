@@ -34,6 +34,18 @@ public class PedidoDao {
         jdbc.update(sql, parametros);
 
     }
+    // Atualizar um pedido
+    //public void atualizarPedido(Pedido ped) {
+    // String sql = "UPDATE pedido SET nome=?, produto=?, quantidade=?, obs=? WHERE id=?";
+    // jdbc.update(sql, ped.getNome(), ped.getProduto(), ped.getQuantidade(), ped.getObs(), ped.getId());
+}
+
+    // Remover um pedido
+    // public void removerPedido(int id) {
+    // String sql = "DELETE FROM pedido WHERE id=?";
+    // jdbc.update(sql, id);
+}
+
 
     
       public List<Map<String, Object>>puxarTodosPedidos(){
