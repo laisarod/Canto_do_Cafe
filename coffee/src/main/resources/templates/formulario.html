@@ -1,16 +1,51 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
-    <title>FORMULARIO</title>
+  <title>Formulário de Pedido</title>
+  <link rel="stylesheet" th:href="@{/css/formulario.css}">
 </head>
+
 <body>
-    <h1 th:text="${titulo}"></h1>
-    <form th:action="@{${link}}" method="POST" th:object="${pedido}">
-        Nome: <input type="text" th:field="*{nome}" ><br>
-        PRODUTO: <input type="text" th:field="*{produto}" ><br>
-        QUANTIDADE: <input type="text" th:field="*{quantidade}" ><br>
-        OBS: <input type="text" th:field="*{obs}" ><br>
-        <input type="submit" th:value="${valor}">
-    </form>
+
+
+  <form th:action="@{${link}}" method="POST" th:object="${pedido}" class="form-container">
+    <div class="form-wrapper">
+      <div class="image-container">
+        <img src="images/moco-fazendo-cafe.jpg" alt="Café" class="form-image">
+      </div>
+
+      <div class="form-content">
+        <h2 class="form-title">Faça seu pedido</h2>
+        <input type="hidden" th:field="*{id}" />
+
+        <div class="input-group">
+          <label for="nome" class="input-label">Nome:</label>
+          <input type="text" th:field="*{nome}" id="nome" class="form-input" placeholder="Seu nome">
+        </div>
+
+        <div class="input-group">
+          <label for="produto" class="input-label">Produto:</label>
+          <input type="text" th:field="*{produto}" id="produto" class="form-input" placeholder="O que deseja?">
+        </div>
+
+        <div class="input-group">
+          <label for="quantidade" class="input-label">Quantidade:</label>
+          <input type="text" th:field="*{quantidade}" id="quantidade" class="form-input" placeholder="Quantos?">
+        </div>
+
+        <div class="input-group">
+          <label for="obs" class="input-label">Observações:</label>
+          <textarea th:field="*{obs}" id="obs" class="form-textarea"
+            placeholder="Alguma observação especial?"></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn" th:text="${valor}">Enviar Pedido</button>
+      
+      </div>
+    </div>
+  </form>
+
 </body>
+
 </html>

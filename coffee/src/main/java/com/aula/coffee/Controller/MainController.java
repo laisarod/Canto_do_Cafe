@@ -53,32 +53,32 @@ public class MainController {
         return "listar";
     }
 // Formulário de edição
-//@GetMapping("/editar")
-//public String editar(@org.springframework.web.bind.annotation.RequestParam int id, Model model) {
-  //  PedidoService ps = ctx.getBean(PedidoService.class);
-  //  Pedido ped = ps.buscarPedidoPorId(id);
-  //  model.addAttribute("pedido", ped);
-  //  model.addAttribute("titulo", "Editar pedido");
- //   model.addAttribute("link", "/atualizar");
-  //  model.addAttribute("valor", "Atualizar");
-  //  return "formulario";
-//}
+@GetMapping("/editar")
+public String editar(@org.springframework.web.bind.annotation.RequestParam int id, Model model) {
+PedidoService ps = ctx.getBean(PedidoService.class);
+   Pedido ped = ps.buscarPedidoPorId(id);
+   model.addAttribute("pedido", ped);
+   model.addAttribute("titulo", "Editar pedido");
+   model.addAttribute("link", "/atualizar");
+   model.addAttribute("valor", "Atualizar");
+   return "formulario";
+}
 
 // Atualizar o pedido (POST)
-//@PostMapping("/atualizar")
-//public String atualizar(@ModelAttribute Pedido ped) {
-   // PedidoService ps = ctx.getBean(PedidoService.class);
-  //  ps.atualizarPedido(ped);
-   // return "redirect:listar";
-//}
+@PostMapping("/atualizar")
+public String atualizar(@ModelAttribute Pedido ped) {
+   PedidoService ps = ctx.getBean(PedidoService.class);
+   ps.atualizarPedido(ped);
+   return "redirect:listar";
+}
 
-// Remover o pedido
-//@GetMapping("/remover")
-//public String remover(@org.springframework.web.bind.annotation.RequestParam int id) {
-   // PedidoService ps = ctx.getBean(PedidoService.class);
-  //  ps.removerPedido(id);
-  //  return "redirect:listar";
-//}
+//Remover o pedido
+@GetMapping("/remover")
+public String remover(@org.springframework.web.bind.annotation.RequestParam int id) {
+   PedidoService ps = ctx.getBean(PedidoService.class);
+   ps.removerPedido(id);
+   return "redirect:listar";
+}
 
 
 }

@@ -1,0 +1,126 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    padding: 0;
+    margin: 0;
+}
+
+
+.navegacao {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0x 10px;
+  background-color:#5a4343;
+}
+
+.nm-empresa {
+  color: white;
+  padding: 5px 10px;
+  margin-left: 15px;
+  border-radius: 5px;
+  font-size: 22px;
+  text-shadow: 2px 2px 5px #5a4343;
+
+}
+
+a {
+   text-decoration: none;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+.page-header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #a87f5b;
+}
+
+.page-title {
+    color: #5a4343;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.products-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    background-color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.products-table thead {
+    background-color: #a87f5b;
+    color: white;
+}
+
+.products-table th {
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.products-table tbody tr {
+    border-bottom: 1px solid #f0f0f0;
+    transition: all 0.3s ease;
+}
+
+.products-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.products-table tbody tr:hover {
+    background-color: #f9f5f0;
+}
+
+.products-table td {
+    padding: 15px;
+    color: #666;
+}
+
+
+.action-links {
+    display: flex;
+    gap: 10px;
+}
+
+.action-link {
+    padding: 6px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.edit-link {
+    background-color: #5a8dee;
+    color: white;
+}
+
+.edit-link:hover {
+    background-color: #3a6ec6;
+}
+
+.delete-link {
+    background-color: #f44336;
+    color: white;
+}
+
+.delete-link:hover {
+    background-color: #d32f2f;
+}
+

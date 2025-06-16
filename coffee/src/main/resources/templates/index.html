@@ -1,164 +1,243 @@
 <!DOCTYPE html>
 <html xmlns="http://www.thymeleaf.org">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" th:href="@{css/style.css}">
-    <script th:src="@{js/main.js}"></script>
-    <title>Caffee Shop!</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" th:href="@{css/style.css}">
+
+  <title>Canto do Café</title>
 </head>
+
 <body>
-<div class="container-main-image"></div>
-<nav class="navegacao">
+
+  <!---imagem principal de apresentação -->
+  <nav class="navegacao">
     <h2 class="nm-empresa">Canto do Café</h2>
     <div class="container-nav">
-        <a href="">Pedidos</a>
-        <a href="">Listagem</a>
-        <a href="">Edição</a>
+      <a th:href="@{listar}">Pedidos</a>
     </div>
-    
-</nav>
-   <img class="main-image" src="images/fazendo-cafe.webp"/>
-    <div class="container-title">
-        <h2 class="bem-vindo">Bem-Vindo ao Canto do Café!</h2>
-        <h1 class="main-frase">Amor em forma de Café!</h1>
-        <input type="button" value="Faça seu pedido já"/>
-         
-    </div>
-    </div>
+  </nav><a th:href="@{/formulario}"></a>
 
 
-    <div class="icons">
-
+  </nav>
+  <img class="main-image" src="images/fazendo-cafe.webp" />
+  <div class="container-title">
+    <h2 class="bem-vindo">Bem-Vindo ao Canto do Café!</h2>
+    <h1 class="main-frase">Amor em forma de Café!</h1>
+    <div class="botao-pedido">
+      <a th:href="@{/formulario}">
+        <button type="button">Faça seu pedido já!</button>
+      </a>
     </div>
-
-
-    <h2 class="conheca-produtos">Conheça nossos produtos</h2>
-
- <div class="container-produtos">
-  <div class="produto-card">
-    <div class="card-header">
-      <img src="images/cafe-preto.jpg" alt="Café Preto">
-      <span class="favorito">♡</span>
-    </div>
-    <h2>Café Preto</h2>
-    <p>An espresso coffee drink, topped with a small layer of crema.</p>
-    <div class="card-footer">
-      <span class="preco">R$ 10.95</span>
-      <button>Novo Pedido</button>
-    </div>
+  </div>
   </div>
 
 
-  <div class="produto-card">
-    <div class="card-header">
-      <img src="images/capuccino.jpg">
-      <span class="favorito">♡</span>
-    </div>
-    <h2>Cappuccino</h2>
-    <p>An espresso coffee drink, topped with a small layer of crema.</p>
-    <div class="card-footer">
-      <span class="preco">R$ 10.95</span>
-      <button>Novo Pedido</button>
-    </div>
-  </div>
-
-
-
-<div class="produto-card">
-    <div class="card-header">
-      <img src="images/frapuccino.jpg" alt="Café Preto">
-      <span class="favorito">♡</span>
-    </div>
-    <h2>Café Preto</h2>
-    <p>An espresso coffee drink, topped with a small layer of crema.</p>
-    <div class="card-footer">
-      <span class="preco">R$ 10.95</span>
-      <button>Novo Pedido</button>
-    </div>
-  </div>
-
-
-  <div class="produto-card">
-    <div class="card-header">
-      <img src="images/cafe-rocambole.jpg" alt="Café Preto">
-      <span class="favorito">♡</span>
-    </div>
-    <h2>Café Preto</h2>
-    <p>An espresso coffee drink, topped with a small layer of crema.</p>
-    <div class="card-footer">
-      <span class="preco">R$ 10.95</span>
-      <button>Novo Pedido</button>
-    </div>
-  </div>
-
-
-</div>
-
-<div class="container-produtos">
-<div class="produto-card">
-    <div class="card-header">
-      <img src="images/bolo-chocolate.jpg" alt="Café Preto">
-      <span class="favorito">♡</span>
-    </div>
-    <h2>Café Preto</h2>
-    <p>An espresso coffee drink, topped with a small layer of crema.</p>
-    <div class="card-footer">
-      <span class="preco">R$ 10.95</span>
-      <button>Novo Pedido</button>
-    </div>
-  </div>
-
+  <!---apresentação de produtos-->
+  <h2 class="conheca-produtos">Conheça nossos produtos</h2>
 
   <div class="container-produtos">
-<div class="produto-card">
-    <div class="card-header">
-      <img src="images/pao-queijo.jpg" alt="Café Preto">
-      <span class="favorito">♡</span>
+    <div class="produto-card">
+      <div class="card-header">
+        <img src="images/cafe-preto.jpg" alt="Café Preto">
+        <span class="favorito" onclick="toggleFavorito(this)">♡</span>
+      </div>
+      <h2>Café Preto</h2>
+      <p>Clássico e intenso. Café coado na hora, puro e sem mistérios.</p>
+      <div class="card-footer">
+        <span class="preco">R$ 10.95</span>
+        <a th:href="@{/formulario}">
+          <button type="button">Novo Pedido</button>
+        </a>
+      </div>
     </div>
-    <h2>Café Preto</h2>
-    <p>An espresso coffee drink, topped with a small layer of crema.</p>
-    <div class="card-footer">
-      <span class="preco">R$ 10.95</span>
-      <button>Novo Pedido</button>
-    </div>
-  </div>
 
+
+    <div class="produto-card">
+      <div class="card-header">
+        <img src="images/capuccino.jpg" alt="Cappuccino">
+        <span class="favorito" onclick="toggleFavorito(this)">♡</span>
+      </div>
+      <h2>Cappuccino</h2>
+      <p>A perfeita combinação de café, leite vaporizado e espuma.</p>
+      <div class="card-footer">
+        <span class="preco">R$ 12.90</span>
+        <a th:href="@{/formulario}">
+          <button type="button">Novo Pedido</button>
+        </a>
+      </div>
+    </div>
+
+
+
+    <div class="produto-card">
+      <div class="card-header">
+        <img src="images/frapuccino.jpg" alt="Cappuccino Especial">
+        <span class="favorito" onclick="toggleFavorito(this)">♡</span>
+      </div>
+      <h2>Cappuccino Especial</h2>
+      <p>Café cremoso com leite, finalizado com chantilly e canela.</p>
+      <div class="card-footer">
+        <span class="preco">R$ 15.20</span>
+        <a th:href="@{/formulario}">
+          <button type="button">Novo Pedido</button>
+        </a>
+      </div>
+    </div>
+
+
+    <div class="produto-card">
+      <div class="card-header">
+        <img src="images/cafe-rocambole.jpg" alt="Rocambole">
+        <span class="favorito" onclick="toggleFavorito(this)">♡</span>
+      </div>
+      <h2>Rocambole e Café<h2>
+          <p>Fatias macias de rocambole recheado, acompanhadas de café fresquinho. </p>
+          <div class="card-footer">
+            <span class="preco">R$ 20.95</span>
+            <a th:href="@{/formulario}">
+              <button type="button">Novo Pedido</button>
+            </a>
+          </div>
+    </div>
+
+
+  </div>
 
   <div class="container-produtos">
-<div class="produto-card">
-    <div class="card-header">
-      <img src="images/coxinha.jpg" alt="Café Preto">
-      <span class="favorito">♡</span>
+    <div class="produto-card">
+      <div class="card-header">
+        <img src="images/bolo-chocolate.jpg" alt="Fatia de bolo de chocolate">
+        <span class="favorito" onclick="toggleFavorito(this)">♡</span>
+      </div>
+      <h2>Fatia de bolo de Chocolate </h2>
+      <p>Bolo fofinho, com cobertura cremosa de chocolate. Irresistível!</p>
+      <div class="card-footer">
+        <span class="preco">R$ 10.90</span>
+        <a th:href="@{/formulario}">
+          <button type="button">Novo Pedido</button>
+        </a>
+      </div>
     </div>
-    <h2>Café Preto</h2>
-    <p>An espresso coffee drink, topped with a small layer of crema.</p>
-    <div class="card-footer">
-      <span class="preco">R$ 10.95</span>
-      <button>Novo Pedido</button>
+
+
+
+    <div class="produto-card">
+      <div class="card-header">
+        <img src="images/pao-queijo.jpg" alt="Pão de queijo">
+        <span class="favorito" onclick="toggleFavorito(this)">♡</span>
+      </div>
+      <h2>Pão de queijo</h2>
+      <p>Tradicional, quentinho e macio. Perfeito para acompanhar seu café!</p>
+      <div class="card-footer">
+        <span class="preco">R$ 9.95</span>
+        <a th:href="@{/formulario}">
+          <button type="button">Novo Pedido</button>
+        </a>
+      </div>
+    </div>
+
+
+
+    <div class="produto-card">
+      <div class="card-header">
+        <img src="images/coxinha.jpg" alt="Coxinha">
+        <span class="favorito" onclick="toggleFavorito(this)">♡</span>
+      </div>
+      <h2>Coxinha</h2>
+      <p>Clássica, crocante por fora e recheada com frango temperado.</p>
+      <div class="card-footer">
+        <span class="preco">R$ 10.95</span>
+        <a th:href="@{/formulario}">
+          <button type="button">Novo Pedido</button>
+        </a>
+
+      </div>
+    </div>
+
+
+    <div class="produto-card">
+      <div class="card-header">
+        <img src="images/bolo.jpg" alt="Bolo de nozes">
+        <span class="favorito" onclick="toggleFavorito(this)">♡</span>
+      </div>
+      <h2>Bolo de nozes</h2>
+      <p>Massa macia com pedaços de nozes e cobertura suave. Um sabor especial.</p>
+      <div class="card-footer">
+        <span class="preco">R$ 12.95</span>
+        <a th:href="@{/formulario}">
+          <button type="button">Novo Pedido</button>
+        </a>
+      </div>
+    </div>
+
+  </div>
+  </div>
+  </div>
+
+
+  </div>
+
+  <!---info -->
+  <div class=" info-card">
+    <img class="tres-cafes" src="images/3-cafes.avif">
+    <div class="img-texto">
+      <img src="images/graos-cafe.png">
+      <div class="textoImg">
+        <h1> Brinde aos bons momentos</h1>
+        <p>Nada como um bom café para reunir amigos, aquecer conversas e tornar o dia mais leve. Aqui, cada xícara é
+          preparada com qualidade, carinho e grãos selecionados para você saborear o melhor.
+          Venha viver essa experiência com a gente.</p>
+      </div>
     </div>
   </div>
 
 
-  <div class="container-produtos">
-<div class="produto-card">
-    <div class="card-header">
-      <img src="images/bolo.jpg" alt="Café Preto">
-      <span class="favorito">♡</span>
+
+  <!---segunda info -->
+
+  <div class="info-card2">
+    <div class="text-info2">
+      <h1>Descubra o sabor que faz a diferença!</h1>
+      <p>No nosso espaço, o café não é apenas uma bebida, é uma experiência. Compartilhe momentos especiais, sorrisos e
+        conversas ao redor de uma xícara preparada com grãos selecionados e todo o cuidado que você merece.
+        Cafés de qualidade, pessoas felizes e boas histórias para contar.</p>
     </div>
-    <h2>Café Preto</h2>
-    <p>An espresso coffee drink, topped with a small layer of crema.</p>
-    <div class="card-footer">
-      <span class="preco">R$ 10.95</span>
-      <button>Novo Pedido</button>
+
+    <img class="quatro-pessoas" src="images/4-pessoas.jpg" alt="Imagem de pessoas">
+  </div>
+
+
+
+
+  <!---comentarios -->
+  <div class="container-comentarios">
+    <h2>Deixe seu comentário aqui!</h2>
+    <div id="listarComentarios"></div>
+
+    <div class="form-comentario">
+      <input type="text" id="nome" placeholder="Seu Nome">
+      <textarea id="comentario-item" placeholder=" Digite seu comentário"></textarea>
+      <button class="botao-comentario" onclick="adicionarComentario()">Enviar</button>
     </div>
   </div>
-
-</div>
-  </div>
   </div>
 
 
+  <!---footer-->
+  <footer>
+    <div class="container-footer">
+      <div class="final">
+        <h3>Trabalho de POO</h3>
+        <P>Laisa Rodrigues</P>
+        <p>Felipe Galaggi</p>
+      </div>
+    </div>
+    <p class="canto-do-cafe">Canto do Café</p>
+  </footer>
 
+  <script th:src="@{/js/main.js}"></script>
 </body>
+
 </html>

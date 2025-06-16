@@ -14,21 +14,21 @@ public class PedidoService {
         pdao.inserirProduto(ped);
     }
     // Atualizar pedido
-    //public void atualizarPedido(Pedido ped) {
-    //pdao.atualizarPedido(ped);
-//}
+   public void atualizarPedido(Pedido ped) {
+     pdao.atualizarPedido(ped);
+   }
 
 //Remover pedido
- //public void removerPedido(int id) {
-// pdao.removerPedido(id);
-//}
+  public void removerPedido(int id) {
+    pdao.removerPedido(id);
+}
 // Buscar um pedido por ID
-//public Pedido buscarPedidoPorId(int id) {
-   // return Pedido.converter(pdao.puxarPedido(id));
-//}
+public Pedido buscarPedidoPorId(int id) {
+   return Pedido.converter(pdao.puxarPedido(id));
+}
 
-   // public List<Pedido> puxarTodosPedidos(){
-    //return Pedido.converterVarios(pdao.puxarTodosPedidos());
-//}
+  public List<Pedido> puxarTodosPedidos(){
+    return Pedido.converterVarios(pdao.puxarTodosPedidos());
+}
 
 }
